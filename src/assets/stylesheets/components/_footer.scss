@@ -1,0 +1,27 @@
+footer {
+  .fb {
+    cursor: pointer;
+    &:hover {
+      color: #2374E1;
+    }
+  }
+  .ig {
+    cursor: pointer;
+    &:hover {
+      color:#C13584;
+    }
+  }
+  .git {
+    cursor: pointer;
+    &:hover {
+      color:$gray;
+    }
+  }
+} 
+
+// a {
+//   color: $white;
+//   &:hover {
+//     color: $secondary;
+//   }
+// }
