@@ -1,4 +1,5 @@
 <template>
+  <Loading :active="isLoading" />
   <swiper
     class="px-3 py-2"
     :modules="modules"
@@ -58,14 +59,17 @@ export default {
   },
   data() {
     return {
+      isLoading: false,
       products: [],
       modules: [A11y, Autoplay],
     };
   },
   methods: {
     getProducts() {
+      this.isLoading = true;
       this.$http.get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/products/all`)
         .then((res) => {
+          this.isLoading = false;
           const { products } = res.data;
           this.products = products;
           console.log(this.products);

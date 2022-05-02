@@ -4,6 +4,9 @@ import 'bootstrap';
 // axios
 import axios from 'axios';
 import VueAxios from 'vue-axios';
+// vue-loading-overlay
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 // fortawesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -22,6 +25,7 @@ import {
   faArrowRight,
   faPlus,
   faMinus,
+  faChevronUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -59,6 +63,7 @@ library.add(
   faArrowRight,
   faPlus,
   faMinus,
+  faChevronUp,
 );
 
 defineRule('required', required);
@@ -78,6 +83,7 @@ const app = createApp(App);
 app.component('font-awesome-icon', FontAwesomeIcon);
 app.use(VueAxios, axios);
 app.use(router);
+app.component('Loading', Loading);
 app.component('Form', Form);
 app.component('Field', Field);
 app.component('ErrorMessage', ErrorMessage);

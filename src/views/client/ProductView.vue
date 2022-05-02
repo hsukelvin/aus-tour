@@ -33,11 +33,11 @@
       </div>
 
       <div class="col-12 d-flex flex-column justify-content-between col-sm-6 px-2 px-md-4">
-        <p class="badge bg-primary text-wrap fs-6 mb-2" style="width: 6rem">
+        <p class="badge bg-primary text-wrap fs-6 mb-2" style="width: 8rem">
           {{ product.category }}
         </p>
         <div class="d-flex align-items-center justify-content-between mb-2">
-          <h2 class="h2 mb-0">{{ product.title }}</h2>
+          <h2 class="h2 fw-bolder mb-0">{{ product.title }}</h2>
           <span class="px-1" style="cursor: pointer;">
             <font-awesome-icon
               :icon="['fa', 'heart']"
@@ -59,7 +59,7 @@
             />
           </span>
         </div>
-        <p class="mb-2">{{ product.content }}</p>
+        <p class="fw-bolder mb-2">{{ product.content }}</p>
         <p class="border-start border-4 border-primary ps-3 mb-3">
           {{ product.description }}
         </p>
@@ -122,17 +122,32 @@
       </div>
     </div>
   </div>
+
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-start fw-bolder mb-4">其它景點選擇</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 px-0">
+        <RandomSwiper />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import FrontBanner from '@/components/FrontBanner.vue';
 import BreadCrumb from '@/components/BreadCrumb.vue';
+import RandomSwiper from '@/components/RandomSwiper.vue';
 import showToastMsg from '@/func/showToastMsg';
 
 export default {
   components: {
     FrontBanner,
     BreadCrumb,
+    RandomSwiper,
   },
   data() {
     return {
@@ -147,6 +162,11 @@ export default {
     quantity() {
       if (this.quantity <= 0) {
         this.quantity = 1;
+      }
+    },
+    $route() {
+      if (this.$route.params.id !== undefined) {
+        this.getProduct();
       }
     },
   },

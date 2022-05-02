@@ -2,6 +2,7 @@
   <FrontBanner />
   <BreadCrumb />
 
+  <Loading :active="isLoading" />
   <div class="container mb-5">
     <div class="row">
       <div class="col-12 col-lg-3 px-3">
@@ -39,8 +40,8 @@
                 background-position: center;
               `"
             >
-              <h2>{{ category }}</h2>
-              <p>{{ categorysArt[category].describe }}</p>
+              <h2 class="text-white fw-bolder fs-1 pt-4 ps-4">{{ category }}</h2>
+              <p class="text-white fw-bolder fs-5 px-4">{{ categorysArt[category].describe }}</p>
             </div>
           </div>
         </div>
@@ -93,6 +94,7 @@ export default {
   },
   data() {
     return {
+      isLoading: false,
       products: [],
       pagination: {},
       categorysArt: {
@@ -144,8 +146,10 @@ export default {
   },
   methods: {
     getCategory() {
+      this.isLoading = true;
       this.$http.get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/products/all`)
         .then((res) => {
+          this.isLoading = false;
           const { products } = res.data;
           const unSort = products.reverse().map((item) => item.category);
 
@@ -163,10 +167,12 @@ export default {
       this.getProducts();
     },
     getProducts(page = 1) {
+      this.isLoading = true;
       const apiPath = this.category === '全部' ? `?page=${page}` : `?page=${page}&category=${this.category}`;
 
       this.$http.get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/products${apiPath}`)
         .then((res) => {
+          this.isLoading = false;
           const { products, pagination } = res.data;
           this.products = products;
           this.pagination = pagination;
@@ -175,6 +181,7 @@ export default {
     // 加入購物車
     addToCart(id, quantity = 1) {
       // console.log(id, quantity);
+      this.isLoading = true;
       const para = {
         data: {
           product_id: id,
@@ -183,6 +190,7 @@ export default {
       };
       this.$http.post(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`, para)
         .then((res) => {
+          this.isLoading = false;
           // console.log(res);
           // 更新購物車 icon 數量
           this.mitt.emit('getCartLength');

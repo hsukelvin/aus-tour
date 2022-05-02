@@ -13,7 +13,7 @@
         </p>
       </div>
       <div class="col-12 col-md-6 p-3">
-        <img class="img-fluid" src="../../assets/12apostles.jpg" alt="about_img">
+        <img class="img-fluid" src="../../assets/about_1.jpg" alt="about_img">
       </div>
     </div>
     <div class="row">
@@ -26,7 +26,7 @@
         </p>
       </div>
       <div class="col-12 col-md-6 p-3">
-        <img class="img-fluid" src="../../assets/sea.jpg" alt="about_img">
+        <img class="img-fluid" src="../../assets/about_2.jpg" alt="about_img">
       </div>
     </div>
   </div>
