@@ -1,4 +1,5 @@
 <template>
+  <Loading :active="isLoading" />
   <div class="container mb-5">
     <div class="row flex-row-reverse">
       <div class="col-12 col-md-6 p-2">
@@ -173,6 +174,7 @@ import showToastMsg from '@/func/showToastMsg';
 export default {
   data() {
     return {
+      isLoading: false,
       carts: [],
       finalTotal: 0,
       total: 0,
@@ -194,8 +196,10 @@ export default {
   },
   methods: {
     getCarts() {
+      this.isLoading = true;
       this.$http.get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`)
         .then((res) => {
+          this.isLoading = false;
           const { carts, total } = res.data.data;
           if (carts.length === 0) {
             this.$router.push('/cart');
@@ -210,6 +214,7 @@ export default {
         });
     },
     getDiscount() {
+      this.isLoading = true;
       const para = {
         data: {
           code: this.couponCode,
@@ -217,6 +222,7 @@ export default {
       };
       this.$http.post(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/coupon`, para)
         .then((res) => {
+          this.isLoading = false;
           const { message, success } = res.data;
           showToastMsg(success, message);
           this.finalTotal = res.data.data.final_total;
@@ -229,6 +235,7 @@ export default {
         });
     },
     createOrder() {
+      this.isLoading = true;
       const para = {
         data: {
           user: this.user,
@@ -238,6 +245,7 @@ export default {
       console.log(para);
       this.$http.post(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order`, para)
         .then((res) => {
+          this.isLoading = false;
           console.log(res);
           this.mitt.emit('getCartLength');
           this.$refs.form.resetForm();

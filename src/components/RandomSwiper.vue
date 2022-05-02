@@ -64,6 +64,7 @@ export default {
       modules: [A11y, Autoplay],
     };
   },
+  inject: ['mitt'],
   methods: {
     getProducts() {
       this.isLoading = true;

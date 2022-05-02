@@ -2,6 +2,7 @@
   <FrontBanner />
   <BreadCrumb />
 
+  <Loading :active="isLoading" />
   <div class="container mb-5">
     <template v-if="favoriteProducts.length">
       <div class="row">
@@ -96,6 +97,7 @@ export default {
   },
   data() {
     return {
+      isLoading: false,
       favoriteProducts: [],
       favorites: JSON.parse(localStorage.getItem('favorites')) || [],
     };
@@ -103,8 +105,10 @@ export default {
   inject: ['mitt', 'currency'],
   methods: {
     getProducts() {
+      this.isLoading = true;
       this.$http.get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/products/all`)
         .then((res) => {
+          this.isLoading = false;
           const { products } = res.data;
           this.filterProducts(products);
         })

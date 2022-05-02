@@ -1,9 +1,10 @@
 <template>
+  <Loading :active="isLoading" />
   <div class="container mb-5">
     <div class="row flex-row-reverse">
       <div class="col-12 col-md-6 p-2">
         <div class="bg-light">
-          <h4 class="text-center fw-bolder p-4 m-0">購買景點</h4>
+          <h4 class="text-center fw-bolder p-4 m-0">購買景點明細</h4>
         </div>
         <div class="table-responsive bg-light px-4">
           <table class="table text-center align-middle m-0">
@@ -85,6 +86,7 @@ import showToastMsg from '@/func/showToastMsg';
 export default {
   data() {
     return {
+      isLoading: false,
       order: {},
       user: {},
     };
@@ -92,9 +94,11 @@ export default {
   inject: ['timeConvert', 'currency'],
   methods: {
     getOrder() {
+      this.isLoading = true;
       const { id } = this.$route.params;
       this.$http.get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order/${id}`)
         .then((res) => {
+          this.isLoading = false;
           console.log(res.data.order.is_paid);
           const { order } = res.data;
           if (order.is_paid === true) {
@@ -109,8 +113,10 @@ export default {
         });
     },
     payOrder() {
+      this.isLoading = true;
       this.$http.post(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/pay/${this.order.id}`)
         .then((res) => {
+          this.isLoading = false;
           console.log(res);
           const { message, success } = res.data;
           showToastMsg(success, message);

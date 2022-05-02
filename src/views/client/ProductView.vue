@@ -2,6 +2,7 @@
   <FrontBanner />
   <BreadCrumb :product-title="product.title" />
 
+  <Loading :active="isLoading" />
   <div class="container-lg mb-5">
     <div class="row justify-content-center">
       <div class="col-12 col-sm-6 px-2 px-md-4 mb-5 mb-md-0">
@@ -151,6 +152,7 @@ export default {
   },
   data() {
     return {
+      isLoading: false,
       product: {},
       mainImg: '',
       quantity: 1,
@@ -177,10 +179,12 @@ export default {
   },
   methods: {
     getProduct() {
+      this.isLoading = true;
       const { id } = this.$route.params;
 
       this.$http.get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/product/${id}`)
         .then((res) => {
+          this.isLoading = false;
           const { product } = res.data;
           this.product = product;
           this.mainImg = this.product.imageUrl;
@@ -199,6 +203,7 @@ export default {
     },
     addToCart() {
       console.log(this.product.id, this.quantity);
+      this.isLoading = true;
       const para = {
         data: {
           product_id: this.product.id,
@@ -207,6 +212,7 @@ export default {
       };
       this.$http.post(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`, para)
         .then((res) => {
+          this.isLoading = false;
           // console.log(res);
           // 更新購物車 icon 數量
           this.mitt.emit('getCartLength');

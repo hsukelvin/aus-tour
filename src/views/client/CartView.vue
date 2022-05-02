@@ -2,6 +2,7 @@
   <FrontBanner />
   <BreadCrumb />
 
+  <Loading :active="isLoading" />
   <div class="container mb-5">
     <template v-if="carts.length">
       <div class="row">
@@ -143,6 +144,7 @@ export default {
   },
   data() {
     return {
+      isLoading: false,
       carts: [],
       finalTotal: 0,
       total: 0,
@@ -151,8 +153,10 @@ export default {
   inject: ['mitt', 'currency'],
   methods: {
     getCarts() {
+      this.isLoading = true;
       this.$http.get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`)
         .then((res) => {
+          this.isLoading = false;
           const { carts, total } = res.data.data;
           console.log(res);
           this.carts = carts;
@@ -165,6 +169,7 @@ export default {
         });
     },
     updateCart(product) {
+      this.isLoading = true;
       console.log(product.qty);
       const { qty, id } = product;
       const para = {
@@ -175,6 +180,7 @@ export default {
       };
       this.$http.put(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${id}`, para)
         .then((res) => {
+          this.isLoading = false;
           console.log(res);
           const { message, success } = res.data;
           showToastMsg(success, message);
@@ -187,8 +193,10 @@ export default {
         });
     },
     deleteCart(id) {
+      this.isLoading = true;
       this.$http.delete(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${id}`)
         .then((res) => {
+          this.isLoading = false;
           const { message, success } = res.data;
           showToastMsg(success, message);
           // 更新購物車 icon 數量
@@ -201,8 +209,10 @@ export default {
         });
     },
     deleteCarts() {
+      this.isLoading = true;
       this.$http.delete(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/carts`)
         .then((res) => {
+          this.isLoading = false;
           const { message, success } = res.data;
           showToastMsg(success, message);
           // 更新購物車 icon 數量
