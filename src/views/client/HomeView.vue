@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12 col-lg-4 text-center p-0">
+        <div class="col-12 col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
           <div class="shadow m-2 py-2">
             <img class="m-2" src="../../assets/map.png" alt="map" />
             <div>
@@ -19,7 +19,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-4 text-center p-0">
+        <div class="col-12 col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
           <div class="shadow m-2 py-2">
             <img class="m-2" src="../../assets/tour-guide.png" alt="guide" />
             <div>
@@ -30,7 +30,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-4 text-center p-0">
+        <div class="col-12 col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
           <div class="shadow m-2 py-2">
             <img class="m-2" src="../../assets/money.png" alt="money" />
             <div>
@@ -60,6 +60,7 @@
           v-for="(item, i) in categorys"
           :key="i"
           @click.prevent="goProductsView(item.name)"
+          data-aos="zoom-in" data-aos-duration="1000"
         >
           <div
             class="
@@ -82,8 +83,16 @@
     <div class="container py-5">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-white fw-bolder py-3">你所不知道的遠方，永遠都是值得一去</h2>
-          <p class="text-white fw-bolder text-end fs-5 py-3">
+          <h2
+            class="text-white fw-bolder py-3"
+            data-aos="zoom-in" data-aos-duration="1000"
+          >
+            你所不知道的遠方，永遠都是值得一去
+          </h2>
+          <p
+            class="text-white fw-bolder text-end fs-5 py-3"
+            data-aos="zoom-in" data-aos-duration="1000"
+          >
             想要未知的瘋狂，想要聲色的張揚，想要最好的時光在最美地方
           </p>
         </div>
@@ -98,7 +107,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12 px-0">
+      <div class="col-12 px-0" data-aos="fade" data-aos-duration="1000">
         <RandomSwiper />
       </div>
     </div>

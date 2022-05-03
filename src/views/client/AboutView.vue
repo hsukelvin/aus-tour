@@ -4,7 +4,10 @@
 
   <div class="container mb-5">
     <div class="row flex-row-reverse">
-      <div class="col-12 col-md-6 d-flex flex-column justify-content-center p-3">
+      <div
+        class="col-12 col-md-6 d-flex flex-column justify-content-center p-4"
+        data-aos="zoom-in" data-aos-duration="1000"
+      >
         <h2 class="text-center fw-bolder mb-3">我們的故事</h2>
         <p class="text-start px-4 mb-0">
           我們是一群熱愛澳洲旅行的團隊，因5年前到澳洲打工度假體驗不同文化的生活而愛上這裡，
@@ -12,12 +15,15 @@
           而進一步創立了澳洲景點帶人暢遊的服務。
         </p>
       </div>
-      <div class="col-12 col-md-6 p-3">
+      <div class="col-12 col-md-6 p-4" data-aos="zoom-in" data-aos-duration="2000">
         <img class="img-fluid" src="../../assets/about_1.jpg" alt="about_img">
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-md-6 d-flex flex-column justify-content-center p-3">
+      <div
+        class="col-12 col-md-6 d-flex flex-column justify-content-center p-4"
+        data-aos="zoom-in" data-aos-duration="1000"
+      >
         <h2 class="text-center fw-bolder mb-3">服務簡介</h2>
         <p class="text-start px-4 mb-0">
           我們屬於開車帶小團體(不超過10人)遊客去想去的景點並介紹解說給他們了解澳洲各景點的文化由來，
@@ -25,7 +31,7 @@
           在未來將會提供更多元的旅遊行程。
         </p>
       </div>
-      <div class="col-12 col-md-6 p-3">
+      <div class="col-12 col-md-6 p-4" data-aos="zoom-in" data-aos-duration="2000">
         <img class="img-fluid" src="../../assets/about_2.jpg" alt="about_img">
       </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <FrontBanner />
+  <FrontBanner :product-title="product.title" />
   <BreadCrumb :product-title="product.title" />
 
   <Loading :active="isLoading" />

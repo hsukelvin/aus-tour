@@ -13,14 +13,38 @@
   >
     <div class="mask d-flex justify-content-center align-items-center">
       <div class="content" v-if="!isToggleVh">
-        <h2 class="text-white fw-bolder rounded fs-1 my-3 mx-2">澳式旅遊 Aus Tour</h2>
-        <p class="text-white fs-4 fw-bolder my-0 mx-2">帶你享受澳洲的經典，體驗一次永生難忘</p>
-        <router-link class="btn btn-secondary fw-bolder fs-4 px-5 my-3 mx-2" to="/products">
+        <h2
+          class="text-white fw-bolder rounded fs-1 my-3 mx-2"
+          data-aos="zoom-in" data-aos-duration="1000"
+        >
+          澳式旅遊 Aus Tour
+        </h2>
+        <p
+          class="text-white fs-4 fw-bolder my-0 mx-2"
+          data-aos="zoom-in" data-aos-duration="1000"
+        >
+          帶你享受澳洲的經典，體驗一次永生難忘
+        </p>
+        <router-link
+          class="btn btn-secondary fw-bolder fs-4 px-5 my-3 mx-2"
+          to="/products"
+          data-aos="zoom-in" data-aos-duration="1000"
+        >
           立即前往選擇景點
         </router-link>
         <div>
           <a class="scroll text-white" href="#" @click.prevent="scrollToHome"><span></span>往下看更多</a>
         </div>
+      </div>
+      <div class="text-white" v-else data-aos="fade-in" data-aos-duration="1000">
+        <h2 class="fw-bolder" v-if="routePath === '/products'">景點列表</h2>
+        <h2 class="fw-bolder" v-else-if="routePath === `/product/${productId}`">
+          {{productTitle}}
+        </h2>
+        <h2 class="fw-bolder" v-else-if="routePath === '/about'" >關於我們</h2>
+        <h2 class="fw-bolder" v-else-if="routePath === '/favorite'">我的收藏</h2>
+        <h2 class="fw-bolder" v-else-if="routePath === '/cart'">購物車</h2>
+        <h2 class="fw-bolder" v-else>結帳流程</h2>
       </div>
     </div>
   </div>
@@ -32,9 +56,20 @@ export default {
     return {
       isToggleVh: false,
       backgroundClassname: '',
+      routePath: '',
+      productId: '',
     };
   },
+  props: ['productTitle'],
   inject: ['mitt'],
+  watch: {
+    $route() {
+      this.routePath = this.$route.fullPath;
+      if (this.$route.params.id !== undefined) {
+        this.productId = this.$route.params.id;
+      }
+    },
+  },
   methods: {
     scrollToHome() {
       this.$emit('scroll-to-home', 'home');
@@ -75,7 +110,12 @@ export default {
       }
     }
   },
-  mounted() {},
+  mounted() {
+    this.routePath = this.$route.fullPath;
+    if (this.$route.params.id !== undefined) {
+      this.productId = this.$route.params.id;
+    }
+  },
   beforeUnmount() {
     this.mitt.off('getRoutePath');
   },

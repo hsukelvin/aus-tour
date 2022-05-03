@@ -5,7 +5,11 @@
         <div
           class="col-12 d-flex flex-column flex-lg-row align-items-lg-center align-items-sm-stretch"
         >
-          <h3 class="text-center text-white fw-bolder m-0 py-3 px-4">訂閱我們即可收到更多旅遊景點資訊 !</h3>
+          <h3
+            class="text-center text-white fw-bolder m-0 py-3 px-4"
+          >
+            訂閱我們即可收到更多旅遊景點資訊 !
+          </h3>
           <Form
             class="flex-fill py-3 px-4"
             ref="subscribe"

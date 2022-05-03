@@ -1,9 +1,10 @@
 <template>
+  <Loading :active="isLoading" />
   <nav class="custom-nav navbar fixed-top navbar-expand-lg navbar-dark" ref="nav">
     <div class="container-lg">
       <router-link
         class="navbar-brand me-auto d-flex align-items-center"
-        to="/" @click="emitRoutePath"
+        to="/home" @click="emitRoutePath"
       >
         <img
           class="img-fluid"
@@ -98,6 +99,7 @@
 export default {
   data() {
     return {
+      isLoading: false,
       cartsLength: 0,
       favoriteLength: 0,
       innerWidth: true,
@@ -115,9 +117,10 @@ export default {
   },
   methods: {
     getCartLength() {
-      this.$http
-        .get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`)
+      this.isLoading = true;
+      this.$http.get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`)
         .then((res) => {
+          this.isLoading = false;
           const { carts } = res.data.data;
           this.cartsLength = carts.length;
         });
