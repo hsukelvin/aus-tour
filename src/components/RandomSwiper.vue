@@ -73,7 +73,6 @@ export default {
           this.isLoading = false;
           const { products } = res.data;
           this.products = products;
-          console.log(this.products);
           this.getRandom();
         });
     },
@@ -85,7 +84,6 @@ export default {
         newArray.push(this.products[n]);
         this.products.splice(n, 1);
       }
-      console.log(newArray);
     },
   },
   mounted() {

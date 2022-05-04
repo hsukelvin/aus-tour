@@ -213,7 +213,6 @@ export default {
     if (this.$route.params.category !== undefined) {
       this.category = this.$route.params.category;
     }
-    console.log(this.category);
     this.getCategory();
     this.getProducts();
   },

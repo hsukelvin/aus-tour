@@ -158,19 +158,17 @@ export default {
         .then((res) => {
           this.isLoading = false;
           const { carts, total } = res.data.data;
-          console.log(res);
           this.carts = carts;
           this.total = total;
           this.finalTotal = res.data.data.final_total;
-          console.log(this.carts);
         })
         .catch((err) => {
-          console.log(err);
+          const { message, success } = err.response.data;
+          showToastMsg(success, message);
         });
     },
     updateCart(product) {
       this.isLoading = true;
-      console.log(product.qty);
       const { qty, id } = product;
       const para = {
         data: {
@@ -181,13 +179,11 @@ export default {
       this.$http.put(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${id}`, para)
         .then((res) => {
           this.isLoading = false;
-          console.log(res);
           const { message, success } = res.data;
           showToastMsg(success, message);
           this.getCarts();
         })
         .catch((err) => {
-          console.dir(err.response.data);
           const { message, success } = err.response.data;
           showToastMsg(success, message);
         });
