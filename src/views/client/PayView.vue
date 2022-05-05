@@ -99,7 +99,6 @@ export default {
       this.$http.get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order/${id}`)
         .then((res) => {
           this.isLoading = false;
-          console.log(res.data.order.is_paid);
           const { order } = res.data;
           if (order.is_paid === true) {
             this.$router.push(`/checkout/payed/${order.id}`);
@@ -109,7 +108,8 @@ export default {
           }
         })
         .catch((err) => {
-          console.log(err);
+          const { message, success } = err.response.data;
+          showToastMsg(success, message);
         });
     },
     payOrder() {
@@ -117,13 +117,13 @@ export default {
       this.$http.post(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/pay/${this.order.id}`)
         .then((res) => {
           this.isLoading = false;
-          console.log(res);
           const { message, success } = res.data;
           showToastMsg(success, message);
           this.$router.push(`/checkout/payed/${this.order.id}`);
         })
         .catch((err) => {
-          console.log(err);
+          const { message, success } = err.response.data;
+          showToastMsg(success, message);
         });
     },
   },

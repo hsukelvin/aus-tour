@@ -4,7 +4,7 @@
     <div class="container-lg">
       <router-link
         class="navbar-brand me-auto d-flex align-items-center"
-        to="/" @click="emitRoutePath"
+        to="/home" @click="emitRoutePath"
       >
         <img
           class="img-fluid"
@@ -161,7 +161,6 @@ export default {
 
     this.getCartLength();
     this.mitt.on('getCartLength', () => {
-      console.log('getCartLength');
       this.getCartLength();
     });
   },

@@ -4,10 +4,11 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 const routes = [
   {
     path: '/',
+    redirect: 'home',
     component: () => import('../views/client/FrontView.vue'),
     children: [
       {
-        path: '',
+        path: 'home',
         component: () => import('../views/client/HomeView.vue'),
       },
       {
@@ -104,7 +105,7 @@ const routes = [
   },
   {
     path: '/:pathMatch(.*)*',
-    component: () => import('../views/NotFound.vue'),
+    component: () => import('../views/NotFoundView.vue'),
   },
 ];
 

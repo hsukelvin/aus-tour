@@ -2,13 +2,13 @@ footer {
   .fb {
     cursor: pointer;
     &:hover {
-      color: #2374E1;
+      color: $blue;
     }
   }
   .ig {
     cursor: pointer;
     &:hover {
-      color:#C13584;
+      color: $pink;
     }
   }
   .git {

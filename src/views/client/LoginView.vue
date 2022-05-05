@@ -34,7 +34,7 @@
                 </label>
               </div>
               <div class="text-center mt-3">
-                <button class="btn btn-primary">登入</button>
+                <button type="button" class="btn btn-primary">登入</button>
               </div>
             </form>
           </div>

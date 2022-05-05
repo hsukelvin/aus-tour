@@ -27,7 +27,7 @@
           帶你享受澳洲的經典，體驗一次永生難忘
         </p>
         <router-link
-          class="btn btn-secondary fw-bolder fs-4 px-5 my-3 mx-2"
+          class="btn btn-primary fw-bolder fs-4 px-5 my-3 mx-2"
           to="/products"
           data-aos="zoom-in" data-aos-duration="1000"
         >
@@ -77,7 +77,7 @@ export default {
     },
   },
   created() {
-    if (this.$route.fullPath !== '/') {
+    if (this.$route.fullPath !== '/home') {
       this.isToggleVh = true;
       if (this.$route.fullPath === '/products') {
         if (this.backgroundClassname !== '') {

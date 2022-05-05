@@ -210,7 +210,8 @@ export default {
           }
         })
         .catch((err) => {
-          console.log(err);
+          const { message, success } = err.response.data;
+          showToastMsg(success, message);
         });
     },
     getDiscount() {
@@ -242,11 +243,9 @@ export default {
           message: this.message,
         },
       };
-      console.log(para);
       this.$http.post(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order`, para)
         .then((res) => {
           this.isLoading = false;
-          console.log(res);
           this.mitt.emit('getCartLength');
           this.$refs.form.resetForm();
           const { orderId } = res.data;

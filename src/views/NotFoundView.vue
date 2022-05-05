@@ -30,14 +30,13 @@ export default {
     },
     backToHomePage() {
       // 用replace跳回/home在按回上一頁不會返回NotFound頁面
-      this.$router.replace('/');
+      this.$router.replace('/home');
     },
   },
   mounted() {
     this.timer = setInterval(this.countdown, 1000);
   },
   beforeUnmount() {
-    console.log('beforeUnmount');
     clearInterval(this.timer);
   },
 };

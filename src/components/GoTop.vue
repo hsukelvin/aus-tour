@@ -1,6 +1,6 @@
 <template>
   <div id="goTop">
-    <button class="goTop btn btn-primary" v-if="scY > 300" @click="toTop">
+    <button type="button" class="goTop btn btn-primary" v-if="scY > 300" @click="toTop">
       <font-awesome-icon :icon="['fas', 'chevron-up']" class="text-white" />
     </button>
   </div>

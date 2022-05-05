@@ -42,7 +42,7 @@
           <span class="px-1" style="cursor: pointer;">
             <font-awesome-icon
               :icon="['fa', 'heart']"
-              class="fs-4 text-secondary"
+              class="fs-4 text-danger"
               data-bs-toggle="tooltip"
               data-bs-placement="buttom"
               title="取消收藏"
@@ -51,7 +51,7 @@
             />
             <font-awesome-icon
               :icon="['far', 'heart']"
-              class="fs-4 text-secondary"
+              class="fs-4 text-danger"
               data-bs-toggle="tooltip"
               data-bs-placement="buttom"
               title="加入收藏"
@@ -97,6 +97,7 @@
             :style="{ cursor: quantity === 1 ? 'not-allowed' : 'pointer' }"
           >
             <button
+              type="button"
               class="btn btn-primary"
               :disabled="quantity === 1"
               @click="quantity--"
@@ -113,9 +114,9 @@
                 v-model.number="quantity"
               />
             </label>
-            <button class="btn btn-primary" @click="quantity++">+</button>
+            <button type="button" class="btn btn-primary" @click="quantity++">+</button>
           </div>
-          <button class="btn btn-primary flex-fill ms-1" @click="addToCart">
+          <button type="button" class="btn btn-primary flex-fill ms-1" @click="addToCart">
             <font-awesome-icon :icon="['fas', 'cart-plus']" class="px-1" />
             加入購物車
           </button>
@@ -125,15 +126,9 @@
   </div>
 
   <div class="container py-5">
-    <div class="row">
-      <div class="col-12">
-        <h2 class="text-start fw-bolder mb-4">其它景點選擇</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 px-0">
-        <RandomSwiper />
-      </div>
+    <h2 class="text-start fw-bolder mb-4">其它景點選擇</h2>
+    <div class="px-0">
+      <RandomSwiper />
     </div>
   </div>
 </template>
@@ -188,10 +183,10 @@ export default {
           const { product } = res.data;
           this.product = product;
           this.mainImg = this.product.imageUrl;
-          console.log(this.product);
         })
         .catch((err) => {
-          console.log(err);
+          const { message, success } = err.response.data;
+          showToastMsg(success, message);
         });
     },
     updateImg(img) {
@@ -202,7 +197,6 @@ export default {
       this.favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     },
     addToCart() {
-      console.log(this.product.id, this.quantity);
       this.isLoading = true;
       const para = {
         data: {
@@ -213,7 +207,6 @@ export default {
       this.$http.post(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`, para)
         .then((res) => {
           this.isLoading = false;
-          // console.log(res);
           // 更新購物車 icon 數量
           this.mitt.emit('getCartLength');
           // Show ToastMessages
