@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-light mb-5">
+  <section class="bg-light mb-5">
     <div class="container">
       <nav class="py-4" aria-label="breadcrumb">
         <ol class="breadcrumb mb-0">
@@ -17,7 +17,7 @@
         </ol>
       </nav>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

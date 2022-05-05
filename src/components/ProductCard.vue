@@ -40,10 +40,10 @@
         <p class="fs-5 fw-bolder">NT$ {{ currency(product.price) }}/人</p>
       </div>
       <div class="text-center m-auto">
-        <a href="#" class="btn btn-primary" @click.prevent="emitAddToCart">
+        <button type="button" class="btn btn-primary" @click.prevent="emitAddToCart">
           <font-awesome-icon :icon="['fas', 'cart-plus']" class="px-1" />
             加入購物車
-        </a>
+        </button>
       </div>
     </div>
   </div>

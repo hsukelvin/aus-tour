@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     class="custom-banner"
     :class="{
       'vh-30': isToggleVh,
@@ -48,7 +48,7 @@
         <h2 class="fw-bolder" v-else>結帳流程</h2>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

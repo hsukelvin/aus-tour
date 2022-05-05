@@ -1,6 +1,6 @@
 <template>
   <FrontBanner @scroll-to-home="scrollToHome" />
-  <div class="" ref="home">
+  <section ref="home">
     <div class="container py-5">
       <h2 class="text-center fw-bolder mb-4">選擇我們的好處</h2>
       <div class="row">
@@ -39,9 +39,8 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="bg-light">
+  </section>
+  <section class="bg-light">
     <div class="container py-5">
       <div class="text-center">
         <h2 class="fw-bolder">想去哪裡呢?</h2>
@@ -72,9 +71,9 @@
         </template>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="custom-arts">
+  <section class="custom-arts">
     <div class="container py-5">
       <h2
         class="text-white fw-bolder py-3"
@@ -89,18 +88,21 @@
         想要未知的瘋狂，想要聲色的張揚，想要最好的時光在最美地方
       </p>
     </div>
-  </div>
+  </section>
 
-  <div class="container py-5">
-    <h2 class="text-center fw-bolder mb-4">更多景點選擇</h2>
-    <div class="px-0" data-aos="fade" data-aos-duration="1000">
-      <RandomSwiper />
+  <section>
+    <div class="container py-5">
+      <h2 class="text-center fw-bolder mb-4">更多景點選擇</h2>
+      <div class="px-0" data-aos="fade" data-aos-duration="1000">
+        <RandomSwiper />
+      </div>
     </div>
-  </div>
-
-  <!-- <div class="container">
-    <h2>旅遊文章推薦</h2>
-  </div> -->
+  </section>
+  <!-- <section>
+    <div class="container">
+      <h2>旅遊文章推薦</h2>
+    </div>
+  </section> -->
 </template>
 
 <script>

@@ -1,6 +1,8 @@
 <template>
   <FrontNavbar :favorites-array="favorites" />
-  <router-view />
+  <main>
+    <router-view />
+  </main>
   <FrontFooter />
 </template>
 

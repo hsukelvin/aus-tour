@@ -1,55 +1,58 @@
 <template>
   <FrontBanner />
-
-  <div class="container my-4 my-sm-5">
-    <div class="row">
-      <div class="col-sm-4 text-center p-2">
-        <div
-          class="
-            badge
-            rounded-pill
-            px-5 px-sm-4 px-md-5 py-3
-          "
-          :class="
-            barPrecent === 0
-            ? 'bg-primary'
-            : 'bg-graylight'
-          "
-        >
-          <span class="fs-5">1. 建立訂單</span>
+  <section class="my-4 my-sm-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 text-center p-2">
+          <div
+            class="
+              badge
+              rounded-pill
+              px-5 px-sm-4 px-md-5 py-3
+            "
+            :class="
+              barPrecent === 0
+              ? 'bg-primary'
+              : 'bg-graylight'
+            "
+          >
+            <span class="fs-5">1. 建立訂單</span>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-4 text-center p-2">
-        <div
-          class="
-            badge
-            rounded-pill
-            px-5 px-sm-4 px-md-5 py-3
-          "
-          :class="
-            barPrecent === 50
-            ? 'bg-primary'
-            : 'bg-graylight'
-          "
-        >
-          <span class="fs-5">2. 確認付款</span>
+        <div class="col-sm-4 text-center p-2">
+          <div
+            class="
+              badge
+              rounded-pill
+              px-5 px-sm-4 px-md-5 py-3
+            "
+            :class="
+              barPrecent === 50
+              ? 'bg-primary'
+              : 'bg-graylight'
+            "
+          >
+            <span class="fs-5">2. 確認付款</span>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-4 text-center p-2">
-        <div
-          class="
-            badge
-            rounded-pill
-            px-5 px-sm-4 px-md-5 py-3
-          "
-          :class="barPrecent === 100 ? 'bg-primary' : 'bg-graylight'"
-        >
-          <span class="fs-5">3. 付款完成</span>
+        <div class="col-sm-4 text-center p-2">
+          <div
+            class="
+              badge
+              rounded-pill
+              px-5 px-sm-4 px-md-5 py-3
+            "
+            :class="barPrecent === 100 ? 'bg-primary' : 'bg-graylight'"
+          >
+            <span class="fs-5">3. 付款完成</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <router-view />
+  </section>
+  <section class="mb-5">
+    <router-view />
+  </section>
 </template>
 
 <script>

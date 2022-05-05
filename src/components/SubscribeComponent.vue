@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-subscribe">
+  <section class="custom-subscribe">
     <div class="container py-5">
       <div
         class="d-flex flex-column flex-lg-row align-items-lg-center align-items-sm-stretch"
@@ -45,7 +45,7 @@
         </Form>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

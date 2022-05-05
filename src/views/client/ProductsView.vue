@@ -3,79 +3,81 @@
   <BreadCrumb />
 
   <Loading :active="isLoading" />
-  <div class="container mb-5">
-    <div class="row">
-      <div class="col-lg-3 px-3">
-        <div class="list-group text-center">
-          <button
-            type="button"
-            class="list-group-item list-group-item-action fw-bolder py-3 fs-5"
-            aria-current="true"
-            @click="filterCategory('全部')"
-            :class="{ active: category === '全部' }"
-          >
-            {{ `全部 (${categorysTotal})` }}
-          </button>
-          <button
-            type="button"
-            class="list-group-item list-group-item-action fw-bolder py-3 fs-5"
-            v-for="(item, i) in Object.keys(this.categorys)" :key="i"
-            @click="filterCategory(item)"
-            :class="{ active: category === item }"
-          >
-            {{ `${item} (${categorys[item]})` }}
-          </button>
-        </div>
-      </div>
-      <div class="col-lg-9">
-        <div class="row">
-          <div class="col-12 px-3 mt-3 mt-md-3 mt-lg-0 mb-lg-4">
-            <div
-              class="rounded"
-              :style="`
-                width: 100%;
-                height: 200px;
-                background-image: url(${categorysArt[category].img});
-                background-size: cover;
-                background-position: center;
-              `"
+  <section class="mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 px-3">
+          <div class="list-group text-center">
+            <button
+              type="button"
+              class="list-group-item list-group-item-action fw-bolder py-3 fs-5"
+              aria-current="true"
+              @click="filterCategory('全部')"
+              :class="{ active: category === '全部' }"
             >
-              <h2 class="text-white fw-bolder fs-1 pt-4 ps-4">{{ category }}</h2>
-              <p class="text-white fw-bolder fs-5 px-4">{{ categorysArt[category].describe }}</p>
+              {{ `全部 (${categorysTotal})` }}
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action fw-bolder py-3 fs-5"
+              v-for="(item, i) in Object.keys(this.categorys)" :key="i"
+              @click="filterCategory(item)"
+              :class="{ active: category === item }"
+            >
+              {{ `${item} (${categorys[item]})` }}
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="row">
+            <div class="col-12 px-3 mt-3 mt-md-3 mt-lg-0 mb-lg-4">
+              <div
+                class="rounded"
+                :style="`
+                  width: 100%;
+                  height: 200px;
+                  background-image: url(${categorysArt[category].img});
+                  background-size: cover;
+                  background-position: center;
+                `"
+              >
+                <h2 class="text-white fw-bolder fs-1 pt-4 ps-4">{{ category }}</h2>
+                <p class="text-white fw-bolder fs-5 px-4">{{ categorysArt[category].describe }}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-2 row-cols-xl-3">
-          <div
-            class="col px-3 mt-3 mt-md-3 mt-lg-0 mb-lg-4"
-            v-for="item in products"
-            :key="item.id"
-          >
-            <RouterLink
-              class="d-flex
-              justify-content-center
-              align-items-stretch
-              text-decoration-none
-              h-100"
-              :to="`/product/${item.id}`"
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-2 row-cols-xl-3">
+            <div
+              class="col px-3 mt-3 mt-md-3 mt-lg-0 mb-lg-4"
+              v-for="item in products"
+              :key="item.id"
             >
-              <ProductCard
-                :product="item"
-                @add-to-cart="addToCart"
-                @toggle-favorite="toggleFavorite"
-              />
-            </RouterLink>
+              <RouterLink
+                class="d-flex
+                justify-content-center
+                align-items-stretch
+                text-decoration-none
+                h-100"
+                :to="`/product/${item.id}`"
+              >
+                <ProductCard
+                  :product="item"
+                  @add-to-cart="addToCart"
+                  @toggle-favorite="toggleFavorite"
+                />
+              </RouterLink>
+            </div>
           </div>
-        </div>
 
-        <div class="row row-cols-1">
-          <div class="col">
-            <PaginationComponent :pagi-obj="pagination" @update-page="getProducts" />
+          <div class="row row-cols-1">
+            <div class="col">
+              <PaginationComponent :pagi-obj="pagination" @update-page="getProducts" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

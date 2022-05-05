@@ -1,6 +1,6 @@
 <template>
   <Loading :active="isLoading" />
-  <div class="container mb-5">
+  <div class="container">
     <div class="row flex-row-reverse">
       <div class="col-md-6 p-2">
         <div class="bg-light">
