@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12 col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
           <div class="shadow m-2 py-2">
             <img class="m-2" src="../../assets/map.png" alt="map" />
             <div>
@@ -19,7 +19,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
           <div class="shadow m-2 py-2">
             <img class="m-2" src="../../assets/tour-guide.png" alt="guide" />
             <div>
@@ -30,7 +30,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
           <div class="shadow m-2 py-2">
             <img class="m-2" src="../../assets/money.png" alt="money" />
             <div>
@@ -116,7 +116,7 @@
   <!-- <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2>旅客心得好文</h2>
+        <h2>旅遊文章推薦</h2>
       </div>
     </div>
   </div> -->

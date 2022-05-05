@@ -17,7 +17,7 @@
           <div class="table-responsive bg-light px-4 pt-4">
             <table class="table text-center align-middle m-0">
               <thead>
-                <tr class="text-primary">
+                <tr>
                   <th class="py-2 px-0" scope="col">圖片</th>
                   <th class="py-2 px-0" scope="col">名稱</th>
                   <th class="py-2 px-0" scope="col">數量</th>

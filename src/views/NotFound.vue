@@ -30,7 +30,7 @@ export default {
     },
     backToHomePage() {
       // 用replace跳回/home在按回上一頁不會返回NotFound頁面
-      this.$router.replace('/home');
+      this.$router.replace('/');
     },
   },
   mounted() {

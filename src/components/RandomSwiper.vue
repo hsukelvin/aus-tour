@@ -84,6 +84,7 @@ export default {
         newArray.push(this.products[n]);
         this.products.splice(n, 1);
       }
+      this.products = newArray;
     },
   },
   mounted() {

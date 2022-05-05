@@ -4,7 +4,7 @@
     <div class="container-lg">
       <router-link
         class="navbar-brand me-auto d-flex align-items-center"
-        to="/home" @click="emitRoutePath"
+        to="/" @click="emitRoutePath"
       >
         <img
           class="img-fluid"
@@ -75,11 +75,6 @@
       <div class="collapse navbar-collapse justify-content-end order-lg-1" id="navbarNav">
         <ul class="navbar-nav text-center">
           <li class="nav-item">
-            <router-link class="nav-link px-3" to="/home" @click="emitRoutePath">
-              首頁
-            </router-link>
-          </li>
-          <li class="nav-item">
             <router-link class="nav-link px-3" to="/products" @click="emitRoutePath">
               景點列表
             </router-link>
@@ -89,6 +84,16 @@
               關於我們
             </router-link>
           </li>
+          <!-- <li class="nav-item">
+            <router-link class="nav-link px-3" to="" @click="emitRoutePath">
+              訂單查詢
+            </router-link>
+          </li> -->
+          <!-- <li class="nav-item">
+            <router-link class="nav-link px-3" to="" @click="emitRoutePath">
+              旅遊文章
+            </router-link>
+          </li> -->
         </ul>
       </div>
     </div>

@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div class="row row-cols-lg-2 border-top text-center mt-5 py-3">
+      <div class="row row-cols-lg-3 border-top text-center mt-5 py-3">
         <div class="my-2">
           <a href="#" class="text-white">
             <font-awesome-icon :icon="['fas', 'user-gear']" class="px-2" />
@@ -52,6 +52,9 @@
         </div>
         <p class="my-2">
           Copyright &copy;2022 All Rights Reserved by : <span class="fw-bolder">Kelvin Hsu</span>
+        </p>
+        <p class="my-2">
+          本網站僅供個人練習使用，無商業行為
         </p>
       </div>
     </div>

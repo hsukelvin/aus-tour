@@ -41,17 +41,17 @@
                   "
                 >
                   <div class="row flex-fill align-items-center">
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-sm-6 col-lg-4">
                       <h5 class="text-center fw-bold m-0 px-2 py-2">
                         {{ item.title }}
                       </h5>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-sm-6 col-lg-4">
                       <p class="text-center m-0 px-2 py-2">
                         NT$ {{ currency(item.price) }}/人
                       </p>
                     </div>
-                    <div class="col-12 col-sm-12 col-lg-4 text-center py-2">
+                    <div class="col-sm-12 col-lg-4 text-center py-2">
                       <router-link
                         class="btn btn-primary mx-2 mx-lg-3 px-3"
                         :to="`/product/${item.id}`"

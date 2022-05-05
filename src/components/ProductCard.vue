@@ -12,7 +12,7 @@
       </span>
       <font-awesome-icon
         :icon="['fa', 'heart']"
-        class="collect fs-4 text-secondary"
+        class="collect fs-4 text-danger"
         data-bs-toggle="tooltip"
         data-bs-placement="buttom"
         title="取消收藏"
@@ -21,7 +21,7 @@
       />
       <font-awesome-icon
         :icon="['far', 'heart']"
-        class="collect fs-4 text-secondary"
+        class="collect fs-4 text-danger"
         data-bs-toggle="tooltip"
         data-bs-placement="buttom"
         title="加入收藏"
@@ -31,7 +31,7 @@
     </div>
 
     <div class="card-body p-3">
-      <h5 class="card-title fw-bolder">{{ product.title }}</h5>
+      <h5 class="card-title fw-bolder mb-3">{{ product.title }}</h5>
       <p class="card-text" style="height: 1.5rem; overflow: hidden">{{ product.content }}</p>
       <div class="d-flex justify-content-between align-items-center">
         <p class="text-gray text-decoration-line-through">

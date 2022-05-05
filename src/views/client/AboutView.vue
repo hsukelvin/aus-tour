@@ -5,7 +5,7 @@
   <div class="container mb-5">
     <div class="row flex-row-reverse">
       <div
-        class="col-12 col-md-6 d-flex flex-column justify-content-center p-4"
+        class="col-md-6 d-flex flex-column justify-content-center p-4"
         data-aos="zoom-in" data-aos-duration="1000"
       >
         <h2 class="text-center fw-bolder mb-3">我們的故事</h2>
@@ -15,13 +15,13 @@
           而進一步創立了澳洲景點帶人暢遊的服務。
         </p>
       </div>
-      <div class="col-12 col-md-6 p-4" data-aos="zoom-in" data-aos-duration="2000">
+      <div class="col-md-6 p-4" data-aos="zoom-in" data-aos-duration="2000">
         <img class="img-fluid" src="../../assets/about_1.jpg" alt="about_img">
       </div>
     </div>
     <div class="row">
       <div
-        class="col-12 col-md-6 d-flex flex-column justify-content-center p-4"
+        class="col-md-6 d-flex flex-column justify-content-center p-4"
         data-aos="zoom-in" data-aos-duration="1000"
       >
         <h2 class="text-center fw-bolder mb-3">服務簡介</h2>
@@ -31,7 +31,7 @@
           在未來將會提供更多元的旅遊行程。
         </p>
       </div>
-      <div class="col-12 col-md-6 p-4" data-aos="zoom-in" data-aos-duration="2000">
+      <div class="col-md-6 p-4" data-aos="zoom-in" data-aos-duration="2000">
         <img class="img-fluid" src="../../assets/about_2.jpg" alt="about_img">
       </div>
     </div>

@@ -4,11 +4,10 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 const routes = [
   {
     path: '/',
-    redirect: 'home',
     component: () => import('../views/client/FrontView.vue'),
     children: [
       {
-        path: 'home',
+        path: '',
         component: () => import('../views/client/HomeView.vue'),
       },
       {

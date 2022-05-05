@@ -2,12 +2,12 @@
   <Loading :active="isLoading" />
   <div class="container mb-5">
     <div class="row flex-row-reverse">
-      <div class="col-12 col-md-6 p-2">
+      <div class="col-md-6 p-2">
         <div class="table-responsive bg-light px-4 pt-4">
           <h4 class="text-center fw-bolder mb-4">訂單內容</h4>
           <table class="table text-center align-middle m-0">
             <thead>
-              <tr class="text-primary">
+              <tr>
                 <th class="py-2 px-0" scope="col">圖片</th>
                 <th class="py-2 px-0" scope="col">名稱</th>
                 <th class="py-2 px-0" scope="col">數量</th>
@@ -71,7 +71,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 p-2">
+      <div class="col-md-6 p-2">
         <div class="bg-light p-4">
           <h4 class="text-center fw-bolder mb-4">填寫訂單資料</h4>
           <Form ref="form" v-slot="{ errors }" @submit="createOrder">

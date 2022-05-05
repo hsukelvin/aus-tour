@@ -13,13 +13,13 @@
     </div>
 
     <div class="card-body p-3">
-      <h5 class="card-title fw-bolder">{{ product.title }}</h5>
+      <h5 class="card-title fw-bolder mb-3">{{ product.title }}</h5>
       <p class="card-text" style="height: 1.5rem; overflow: hidden">{{ product.content }}</p>
       <div class="d-flex justify-content-between align-items-center">
-        <p class="text-gray text-decoration-line-through">
+        <p class="text-gray text-decoration-line-through mb-0">
           NT$ {{ currency(product.origin_price) }}/人
         </p>
-        <p class="fs-5 fw-bolder">NT$ {{ currency(product.price) }}/人</p>
+        <p class="fs-5 fw-bolder mb-0">NT$ {{ currency(product.price) }}/人</p>
       </div>
     </div>
   </div>

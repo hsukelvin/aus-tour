@@ -3,7 +3,7 @@
 
   <div class="container my-4 my-sm-5">
     <div class="row">
-      <div class="col-12 col-sm-4 text-center p-2">
+      <div class="col-sm-4 text-center p-2">
         <div
           class="
             badge
@@ -19,7 +19,7 @@
           <span class="fs-5">1. 建立訂單</span>
         </div>
       </div>
-      <div class="col-12 col-sm-4 text-center p-2">
+      <div class="col-sm-4 text-center p-2">
         <div
           class="
             badge
@@ -35,7 +35,7 @@
           <span class="fs-5">2. 確認付款</span>
         </div>
       </div>
-      <div class="col-12 col-sm-4 text-center p-2">
+      <div class="col-sm-4 text-center p-2">
         <div
           class="
             badge

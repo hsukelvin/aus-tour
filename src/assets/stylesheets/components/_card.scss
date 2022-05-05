@@ -1,7 +1,7 @@
 .custom-card {
   color: $black;
   border: 0;
-  box-shadow: 0 5px 15px 0px rgba(208, 219, 224, 0.5);
+  box-shadow: 0 2px 2px 0px rgba(208, 219, 224, 0.5);
   overflow: hidden;
   transition: 0.5s;
 
@@ -37,7 +37,7 @@
 
   &:hover {
     
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.4);
 
     .custom-img img {
       transform: scale(1.1);

@@ -2,7 +2,7 @@
   <Loading :active="isLoading" />
   <div class="container mb-5">
     <div class="row flex-row-reverse">
-      <div class="col-12 col-md-6 p-2">
+      <div class="col-md-6 p-2">
         <div class="bg-light">
           <h4 class="text-center fw-bolder p-4 m-0">購買景點明細</h4>
         </div>
@@ -33,7 +33,7 @@
           <div class="h5 fw-bold p-2 mb-0">總金額 : NT$ {{ currency(order.total) }}</div>
         </div>
       </div>
-      <div class="col-12 col-md-6 p-2">
+      <div class="col-md-6 p-2">
         <div class="bg-light">
           <h4 class="text-center fw-bolder p-4 m-0">訂單資訊</h4>
           <ul class="list-group px-4">

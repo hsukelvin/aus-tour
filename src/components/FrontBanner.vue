@@ -7,7 +7,8 @@
       'product-banner': this.backgroundClassname === 'product-banner',
       'about-banner': this.backgroundClassname === 'about-banner',
       'favorite-banner': this.backgroundClassname === 'favorite-banner',
-      'cart-banner': this.backgroundClassname === 'cart-banner'
+      'cart-banner': this.backgroundClassname === 'cart-banner',
+      'checkOut-banner': this.backgroundClassname === 'checkOut-banner'
     }"
     ref="banner"
   >
@@ -76,7 +77,7 @@ export default {
     },
   },
   created() {
-    if (this.$route.fullPath !== '/home') {
+    if (this.$route.fullPath !== '/') {
       this.isToggleVh = true;
       if (this.$route.fullPath === '/products') {
         if (this.backgroundClassname !== '') {
@@ -107,6 +108,12 @@ export default {
           this.$refs.banner.classList.remove(this.backgroundClassname);
         }
         this.backgroundClassname = 'cart-banner';
+      }
+      if (this.$route.fullPath.includes('/checkout')) {
+        if (this.backgroundClassname !== '') {
+          this.$refs.banner.classList.remove(this.backgroundClassname);
+        }
+        this.backgroundClassname = 'checkOut-banner';
       }
     }
   },

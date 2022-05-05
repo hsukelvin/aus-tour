@@ -5,7 +5,7 @@
   <Loading :active="isLoading" />
   <div class="container-lg mb-5">
     <div class="row justify-content-center">
-      <div class="col-12 col-sm-6 px-2 px-md-4 mb-5 mb-md-0">
+      <div class="col-sm-6 px-2 px-md-4 mb-5 mb-md-0">
         <div class="row row-cols-1">
           <div class="col">
             <img :src="mainImg" alt="顯示產品圖片" class="img-fluid bg-cover" />
@@ -33,7 +33,7 @@
         </div>
       </div>
 
-      <div class="col-12 d-flex flex-column justify-content-between col-sm-6 px-2 px-md-4">
+      <div class="d-flex flex-column justify-content-between col-sm-6 px-2 px-md-4">
         <p class="badge bg-primary text-wrap fs-6 mb-2" style="width: 8rem">
           {{ product.category }}
         </p>

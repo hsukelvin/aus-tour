@@ -21,7 +21,7 @@
               />
               繼續選購
             </router-link>
-            <router-link class="btn btn-primary mx-1 mx-sm-5" to="/home">
+            <router-link class="btn btn-primary mx-1 mx-sm-5" to="/">
               返回首頁
               <font-awesome-icon
                 type="button"

@@ -5,7 +5,7 @@
   <Loading :active="isLoading" />
   <div class="container mb-5">
     <div class="row">
-      <div class="col-12 col-lg-3 px-3">
+      <div class="col-lg-3 px-3">
         <div class="list-group text-center">
           <button
             type="button"
@@ -27,7 +27,7 @@
           </button>
         </div>
       </div>
-      <div class="col-12 col-lg-9">
+      <div class="col-lg-9">
         <div class="row">
           <div class="col-12 px-3 mt-3 mt-md-3 mt-lg-0 mb-lg-4">
             <div
