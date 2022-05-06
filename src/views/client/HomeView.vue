@@ -65,7 +65,9 @@
               "
               :style="`background-image: url(${item.img});`"
             >
-              <h3 class="underline text-white fw-bolder mb-0">{{ item.name }}</h3>
+              <div class="custom-bg p-3">
+                <h3 class="underline text-white fw-bolder mb-0">{{ item.name }}</h3>
+              </div>
             </div>
           </a>
         </template>

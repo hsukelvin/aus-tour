@@ -42,7 +42,7 @@
               折扣 : NT$ {{ currency(this.total - this.finalTotal) }}
             </div>
           </div>
-          <div class="h5 fw-bold p-2 mb-0">總金額 : NT$ {{ currency(finalTotal) }}</div>
+          <div class="fs-5 fw-bold p-2 mb-0">總金額 : NT$ {{ currency(finalTotal) }}</div>
           <div
             class="input-group d-flex justify-content-end align-items-center"
             :style="{
@@ -54,7 +54,8 @@
               <input
                 type="text"
                 name="coupon"
-                placeholder="輸入折扣碼"
+                :placeholder="total - finalTotal !== 0 ? '已成功套用折扣碼!!' : '輸入折扣碼'"
+                :disabled="total - finalTotal !== 0 ? true : false"
                 id="coupon" class="form-control"
                 v-model="couponCode"
               />
@@ -70,6 +71,18 @@
             </button>
           </div>
         </div>
+        <Vue3Marquee
+          class="fs-5 my-3"
+          :pauseOnHover="true"
+          :pauseOnClick="true"
+        >
+          <span style="margin: 0 30px;">
+            現在只要輸入折扣碼"<span class="fs-4 fw-bolder text-danger">SuperPrice80</span>"，即可享有折扣喔 !
+          </span>
+          <span style="margin: 0 30px;">
+            現在只要輸入折扣碼"<span class="fs-4 fw-bolder text-danger">SuperPrice80</span>"，即可享有折扣喔 !
+          </span>
+        </Vue3Marquee>
       </div>
       <div class="col-md-6 p-2">
         <div class="bg-light p-4">
@@ -170,15 +183,20 @@
 
 <script>
 import showToastMsg from '@/func/showToastMsg';
+import { Vue3Marquee } from 'vue3-marquee';
+import 'vue3-marquee/dist/style.css';
 
 export default {
+  components: {
+    Vue3Marquee,
+  },
   data() {
     return {
       isLoading: false,
       carts: [],
       finalTotal: 0,
       total: 0,
-      couponCode: 'SuperPrice80',
+      couponCode: '',
       user: {},
       message: '',
     };
@@ -189,8 +207,6 @@ export default {
     total() {
       if (this.total - this.finalTotal !== 0) {
         this.couponCode = '';
-      } else {
-        this.couponCode = 'SuperPrice80';
       }
     },
   },
