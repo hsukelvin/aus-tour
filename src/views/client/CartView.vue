@@ -8,7 +8,11 @@
       <template v-if="carts.length">
         <div class="d-flex p-2">
           <div class="flex-fill bg-light text-end p-2">
-            <button type="button" class="btn btn-primary" @click="deleteCarts">清空購物車</button>
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              @click="deleteCarts">清空購物車
+            </button>
           </div>
         </div>
         <div class="p-2">
@@ -93,7 +97,7 @@
         </div>
         <div class="p-2">
           <div class="bg-light d-flex p-2">
-            <router-link class="btn btn-primary" to="/products">
+            <router-link class="btn btn-outline-primary" to="/products">
               <font-awesome-icon
                 :icon="['fas', 'arrow-left']"
                 class="pe-2"

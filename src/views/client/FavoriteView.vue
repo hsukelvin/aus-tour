@@ -15,7 +15,7 @@
             <span>
               <font-awesome-icon
                 :icon="['fas', 'xmark']"
-                class="btn btn-primary text-white fs-3 remove-favo"
+                class="text-primary fs-3 remove-favo"
                 @click="deleteProduct(item)"
               />
             </span>

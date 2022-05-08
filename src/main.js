@@ -29,6 +29,7 @@ import {
   faPlus,
   faMinus,
   faChevronUp,
+  faChevronDown,
 } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -67,6 +68,7 @@ library.add(
   faPlus,
   faMinus,
   faChevronUp,
+  faChevronDown,
 );
 
 defineRule('required', required);

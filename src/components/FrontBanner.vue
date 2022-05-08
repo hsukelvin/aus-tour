@@ -33,9 +33,16 @@
         >
           立即前往選擇景點
         </router-link>
-        <div>
-          <a class="scroll text-white" href="#" @click.prevent="scrollToHome"><span></span>往下看更多</a>
-        </div>
+        <a
+          class="scroll-down-btn d-flex flex-column align-items-center text-white"
+          href="#"
+          @click.prevent="scrollToHome"
+        >
+          <span class="bounce">
+            <font-awesome-icon :icon="['fas', 'chevron-down']" class="text-white fs-1" />
+          </span>
+          <span>往下看更多</span>
+        </a>
       </div>
       <div class="text-white" v-else data-aos="fade-in" data-aos-duration="1000">
         <h2 class="fw-bolder" v-if="routePath === '/products'">景點列表</h2>
@@ -130,52 +137,14 @@ export default {
 </script>
 
 <style lang="scss">
-.scroll {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  z-index: 2;
-  display: inline-block;
-  transform: translate(-50%, -50%);
-  text-decoration: none;
-}
+  .scroll-down-btn {
+    position: absolute;
+    bottom: 0%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
 
-.scroll {
-  padding-top: 60px;
-}
-.scroll span {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 24px;
-  height: 24px;
-  margin-left: -12px;
-  border-left: 3px solid #fff;
-  border-bottom: 3px solid #fff;
-  transform: rotate(-45deg);
-  animation: sdb 2s infinite;
-  box-sizing: border-box;
-}
-@-webkit-keyframes sdb {
-  0% {
-    -webkit-transform: rotate(-45deg) translate(0, 0);
-  }
-  20% {
-    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
-  }
-  40% {
-    -webkit-transform: rotate(-45deg) translate(0, 0);
-  }
-}
-@keyframes sdb {
-  0% {
-    transform: rotate(-45deg) translate(0, 0);
-  }
-  20% {
-    transform: rotate(-45deg) translate(-10px, 10px);
-  }
-  40% {
-    transform: rotate(-45deg) translate(0, 0);
-  }
-}
+  @keyframes bounce{from{transform:translateY(0px)}to{transform:translateY(-15px)}};
+
+ .bounce {animation: bounce 1s infinite alternate;-webkit-animation: bounce 1s infinite alternate;}
 </style>
